@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayush Gupta - Hospitality Professional Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+
+        .nav-logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #d4af37, #f4e4c1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #f4e4c1;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+
+        .nav-links a:hover {
+            color: #d4af37;
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: #d4af37;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 80px;
+        }
+
+        /* Hero Header Section */
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(244, 228, 193, 0.05));
+            border-radius: 30px;
+            margin-bottom: 40px;
+        }
+
+        .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #d4af37, #f4e4c1, #d4af37);
+            opacity: 0.05;
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+        }
+
+        .profile-section {
+            position: relative;
+            z-index: 2;
+            animation: fadeInDown 1s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 4em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #d4af37, #f4e4c1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5)); }
+            50% { filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.8)); }
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: #d4af37;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .tagline {
+            font-size: 1.2em;
+            color: #f4e4c1;
+            margin: 25px 0;
+            font-style: italic;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1.1em;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #d4af37, #f4e4c1);
+            color: #1a1a2e;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #d4af37;
+            border: 2px solid #d4af37;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .section {
+            margin: 80px 0;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.4s; }
+        .section:nth-child(4) { animation-delay: 0.6s; }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .section-title {
+            font-size: 2.8em;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+        }
+
+        /* Image Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+            border-color: #d4af37;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 20px;
+            transform: translateY(100%);
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(244, 228, 193, 0.05));
+            border-radius: 20px;
+            padding: 35px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+        }
+
+        .card:hover::before {
+            left: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.3);
+            border-color: rgba(212, 175, 55, 0.5);
+        }
+
+        .card h3 {
+            color: #d4af37;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card p {
+            line-height: 1.8;
+            color: #e0e0e0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .internship-card {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(244, 228, 193, 0.1));
+            border-radius: 25px;
+            padding: 50px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            margin-top: 50px;
+            position: relative;
+        }
+
+        .internship-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .hotel-name {
+            font-size: 2.5em;
+            color: #d4af37;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .duration {
+            font-size: 1.3em;
+            color: #f4e4c1;
+        }
+
+        .certificate-badge {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #d4af37, #f4e4c1);
+            color: #1a1a2e;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 15px;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .departments {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .dept-card {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 18px;
+            padding: 30px;
+            border-left: 5px solid #d4af37;
+            transition: all 0.3s ease;
+        }
+
+        .dept-card:hover {
+            background: rgba(212, 175, 55, 0.15);
+            transform: translateX(10px);
+        }
+
+        .dept-title {
+            font-size: 1.4em;
+            color: #d4af37;
+            margin-bottom: 18px;
+            font-weight: bold;
+        }
+
+        .dept-tasks {
+            list-style: none;
+        }
+
+        .dept-tasks li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .dept-tasks li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: #d4af37;
+            font-size: 1.2em;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .skill-item {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 30px;
+            border-radius: 18px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .skill-item:hover {
+            background: rgba(212, 175, 55, 0.2);
+            transform: scale(1.05);
+        }
+
+        .skill-item h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .education-timeline {
+            position: relative;
+            padding-left: 60px;
+            margin-top: 50px;
+        }
+
+        .education-timeline::before {
+            content: '';
+            position: absolute;
+            left: 25px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #d4af37, transparent);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+            padding: 30px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 18px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -45px;
+            top: 35px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #d4af37;
+            border: 4px solid #16213e;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.7);
+        }
+
+        .clubs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 50px;
+            justify-content: center;
+        }
+
+        .club-badge {
+            padding: 18px 35px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(244, 228, 193, 0.1));
+            border-radius: 35px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+            cursor: default;
+            font-size: 1.05em;
+        }
+
+        .club-badge:hover {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(244, 228, 193, 0.2));
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(244, 228, 193, 0.1));
+            border-radius: 30px;
+            padding: 60px 40px;
+            margin: 80px 0;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .contact-card {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .contact-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .contact-card h3 {
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .contact-card p {
+            color: #f4e4c1;
+            font-size: 1.1em;
+        }
+
+        .contact-card a {
+            color: #f4e4c1;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            color: #d4af37;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(26, 26, 46, 0.8);
+            padding: 60px 40px 30px;
+            margin-top: 100px;
+            border-top: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 30px 30px 0 0;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            color: #d4af37;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #e0e0e0;
+            line-height: 1.8;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer-section a:hover {
+            color: #d4af37;
+            transform: translateX(5px);
+            display: inline-block;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(212, 175, 55, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            font-size: 1.2em;
+        }
+
+        .social-icon:hover {
+            background: #d4af37;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            color: #e0e0e0;
+        }
+
+        .floating-icon {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #d4af37, #f4e4c1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 5px 25px rgba(212, 175, 55, 0.5);
+            animation: float 3s ease-in-out infinite;
+            z-index: 1000;
+            color: #1a1a2e;
+            font-weight: bold;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Modal for images */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            margin: auto;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 15px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: #d4af37;
+            font-size: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 2001;
+        }
+
+        .close-modal:hover {
+            color: #f4e4c1;
+        }
+
+        @media (max-width: 1024px) {
+    .container {
+        padding: 10px;
+    }
+    .nav-container {
+        padding: 10px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgba(26, 26, 46, 0.98);
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+        z-index: 1001;
+    }
+    .nav-links li {
+        border-bottom: 1px solid rgba(212,175,55,0.1);
+        text-align: center;
+        padding: 10px 0;
+    }
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+    .mobile-menu {
+        display: flex;
+        z-index: 1002;
+    }
+    .container {
+        padding: 8px;
+        margin-top: 70px;
+    }
+    header {
+        padding: 40px 8px;
+        border-radius: 18px;
+    }
+    h1 { font-size: 2em; }
+    .section-title { font-size: 1.3em; }
+    .card-grid, .departments, .gallery, .skills-grid, .contact-grid, .footer-content {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+    .internship-card {
+        padding: 18px 8px;
+    }
+    .education-timeline {
+        padding-left: 18px;
+    }
+    .timeline-item {
+        padding: 15px;
+    }
+    .clubs {
+        gap: 10px;
+    }
+    .club-badge {
+        padding: 10px 15px;
+        font-size: 0.95em;
+    }
+    .footer-content {
+        padding: 0;
+        gap: 10px;
+    }
+    .footer-section {
+        padding: 0;
+    }
+    .floating-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+        bottom: 15px;
+        right: 15px;
+    }
+    .modal-content {
+        max-width: 98vw;
+        max-height: 70vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 2px;
+        margin-top: 60px;
+    }
+    header {
+        padding: 20px 2px;
+    }
+    .footer-content {
+        padding: 0;
+    }
+    .footer-section {
+        padding: 0;
+    }
+    .modal-content {
+        max-width: 98vw;
+        max-height: 60vh;
+    }
+}
+
+/* Prevent horizontal scroll */
+body, html {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">AYUSH GUPTA</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Hero Header -->
+        <header id="home">
+            <div class="header-bg"></div>
+            <div class="profile-section">
+                <h1>AYUSH GUPTA</h1>
+                <div class="subtitle">Hospitality Professional | Hotel Management Specialist</div>
+                <p class="tagline">"Passionate about delivering exceptional guest experiences with excellence and dedication"</p>
+                <p style="font-size: 1.15em; margin: 20px 0; color: #f4e4c1;">21 Years | Institute of Hotel Management, Gwalior</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#experience" class="btn btn-secondary">View Experience</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Visual Highlights -->
+        <section class="section">
+            <h2 class="section-title">Training Highlights</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 40px;">
+                <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(244, 228, 193, 0.1)); border-radius: 25px; padding: 30px; border: 2px solid rgba(212, 175, 55, 0.3); text-align: center;">
+                    <div style="font-size: 4em; margin-bottom: 15px;">🏨</div>
+                    <h3 style="color: #d4af37; font-size: 1.8em; margin-bottom: 15px;">Taj Hari Mahal Experience</h3>
+                    <p style="color: #f4e4c1; line-height: 1.8;">Completed comprehensive industrial training at one of India's most prestigious heritage hotels in Jodhpur, gaining hands-on experience in luxury hospitality operations.</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(244, 228, 193, 0.1)); border-radius: 25px; padding: 30px; border: 2px solid rgba(212, 175, 55, 0.3); text-align: center;">
+                    <div style="font-size: 4em; margin-bottom: 15px;">📜</div>
+                    <h3 style="color: #d4af37; font-size: 1.8em; margin-bottom: 15px;">94% Excellence Record</h3>
+                    <p style="color: #f4e4c1; line-height: 1.8;">Awarded Certificate of Excellence with 94% attendance, demonstrating dedication, punctuality, and commitment to professional development throughout the training period.</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(244, 228, 193, 0.1)); border-radius: 25px; padding: 30px; border: 2px solid rgba(212, 175, 55, 0.3); text-align: center;">
+                    <div style="font-size: 4em; margin-bottom: 15px;">👨‍🍳</div>
+                    <h3 style="color: #d4af37; font-size: 1.8em; margin-bottom: 15px;">Multi-Department Expertise</h3>
+                    <p style="color: #f4e4c1; line-height: 1.8;">Trained across Front Office, Food Production, Housekeeping, and Food & Beverage departments, developing comprehensive understanding of hotel operations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section" id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Professional Background</h3>
+                    <p>Currently pursuing Bachelor of Science in Hospitality and Hotel Administration at Institute of Hotel Management, Gwalior. Completed comprehensive industrial training at the prestigious Taj Hari Mahal, Jodhpur, gaining hands-on experience across all core hotel departments.</p>
+                </div>
+                <div class="card">
+                    <h3>Core Competencies</h3>
+                    <p>Expertise in Front Office operations, Food Production, Housekeeping standards, and Food & Beverage service. Strong leadership abilities with excellent communication skills and proven track record in guest relations and service excellence.</p>
+                </div>
+                <div class="card">
+                    <h3>Career Vision</h3>
+                    <p>Aspiring to become a leading hospitality professional, dedicated to creating memorable guest experiences while contributing to the growth and success of prestigious hotel brands through innovative service delivery and operational excellence.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Gallery Section -->
+        <section class="section" id="gallery">
+            <h2 class="section-title">Professional Journey Gallery</h2>
+            <div class="gallery">
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="IMG-20251004-WA0005.jpg" alt="Training at Taj Hari Mahal">
+                    <div class="gallery-overlay">
+                        <p>First Day at Taj Hari Mahal – Excitement & New Beginnings</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="IMG-20251004-WA0008.jpg" alt="Teamwork">
+                    <div class="gallery-overlay">
+                        <p>Teamwork with Colleagues – Learning Together</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="IMG-20251004-WA0009.jpg" alt="Guest Service">
+                    <div class="gallery-overlay">
+                        <p>Guest Service – Delivering Memorable Experiences</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="IMG-20251004-WA0010.jpg" alt="Event Setup">
+                    <div class="gallery-overlay">
+                        <p>Event Setup – Attention to Detail in Banquet Arrangements</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="IMG-2025 1004-WA0011.jpg" alt="Housekeeping">
+                    <div class="gallery-overlay">
+                        <p>Housekeeping – Maintaining Clean & Comfortable Rooms</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="IMG-20251004-WA0035.jpg" alt="Food Production">
+                    <div class="gallery-overlay">
+                        <p>Food Production – Culinary Skills in Action</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="IMG-20251004-WA0024.jpg" alt="Buffet Service">
+                    <div class="gallery-overlay">
+                        <p>Buffet Service – Managing Busy Breakfast Hours</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="IMG-20251004-WA0026.jpg" alt="Team Activity">
+                    <div class="gallery-overlay">
+                        <p>Team Activity – Collaboration & Fun Moments</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="IMG-20251004-WA0029.jpg" alt="Training Session">
+                    <div class="gallery-overlay">
+                        <p>Training Session – Learning from Industry Experts</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="IMG-20251004-WA0031.jpg" alt="Guest Interaction">
+                    <div class="gallery-overlay">
+                        <p>Guest Interaction – Building Relationships</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="IMG-20251004-WA0035.jpg" alt="Event Management">
+                    <div class="gallery-overlay">
+                        <p>Event Management – Handling Large Functions</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="IMG-20251004-WA0041.jpg" alt="Celebration">
+                    <div class="gallery-overlay">
+                        <p>Celebration – Cherishing Achievements & Memories</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Education Section -->
+        <section class="section" id="education">
+            <h2 class="section-title">Education</h2>
+            <div class="education-timeline">
+                <div class="timeline-item">
+                    <h3 style="color: #d4af37; font-size: 1.5em;">Bachelor of Science in Hospitality and Hotel Administration</h3>
+                    <p style="color: #f4e4c1; margin: 12px 0; font-size: 1.1em;">Institute of Hotel Management, Gwalior, Madhya Pradesh</p>
+                    <p style="color: #e0e0e0;">2023 - 2026 (Pursuing)</p>
+                    <p style="margin-top: 15px; color: #e0e0e0;">Comprehensive hospitality education covering all aspects of hotel management, operations, and service excellence.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3 style="color: #d4af37; font-size: 1.5em;">Intermediate (12th Grade)</h3>
+                    <p style="color: #f4e4c1; margin: 12px 0; font-size: 1.1em;">SR. DAV Public School, Pundag, Ranchi, Jharkhand</p>
+                    <p style="color: #e0e0e0;">2022-2023 | Score: 70%</p>
+                </div>
+                <div class="timeline-item">
+                    <h3 style="color: #d4af37; font-size: 1.5em;">Matriculation (10th Grade)</h3>
+                    <p style="color: #f4e4c1; margin: 12px 0; font-size: 1.1em;">SR. DAV Public School, Pundag, Ranchi, Jharkhand</p>
+                    <p style="color: #e0e0e0;">2020-2021 | Score: 68%</p>
+                </div>
+            </div>
+        </section>
+        <!-- Experience Section -->
+        <section class="section" id="experience">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="internship-card">
+                <div class="internship-header">
+                    <div class="hotel-name">TAJ HARI MAHAL</div>
+                    <div class="duration">Jodhpur, Rajasthan | July 2024 - October 2024</div>
+                    <p style="margin-top: 20px; font-size: 1.2em; color: #f4e4c1;">Industrial Training - All 4 Core Departments</p>
+                    <span class="certificate-badge">Certificate of Excellence - 94% Attendance</span>
+                </div>
+                <div class="departments">
+                    <div class="dept-card">
+                        <div class="dept-title">🏨 FRONT OFFICE</div>
+                        <ul class="dept-tasks">
+                            <li>Managed guest luggage with precision and care</li>
+                            <li>Executed seamless check-in and check-out procedures</li>
+                            <li>Provided warm, professional guest welcomes</li>
+                            <li>Handled guest inquiries and resolved issues efficiently</li>
+                            <li>Maintained high standards of front desk operations</li>
+                        </ul>
+                    </div>
+                    <div class="dept-card">
+                        <div class="dept-title">🍳 FOOD PRODUCTION</div>
+                        <ul class="dept-tasks">
+                            <li>Managed morning and evening buffet operations</li>
+                            <li>Operated live cooking counters with expertise</li>
+                            <li>Worked in cafeteria and banquet cooking sections</li>
+                            <li>Assisted in pantry operations and meal preparation</li>
+                            <li>Maintained food safety and hygiene standards</li>
+                        </ul>
+                    </div>
+                    <div class="dept-card">
+                        <div class="dept-title">🛏️ HOUSEKEEPING</div>
+                        <ul class="dept-tasks">
+                            <li>Room preparation according to hotel standards</li>
+                            <li>Executed turndown service with attention to detail</li>
+                            <li>Managed operations during full occupancy periods</li>
+                            <li>Handled in-house guest issues promptly</li>
+                            <li>Provided exceptional housekeeping services</li>
+                        </ul>
+                    </div>
+                    <div class="dept-card">
+                        <div class="dept-title">🍽️ FOOD & BEVERAGE</div>
+                        <ul class="dept-tasks">
+                            <li>Delivered restaurant service excellence</li>
+                            <li>Managed in-room dining operations</li>
+                            <li>Handled breakfast buffet counter efficiently</li>
+                            <li>Setup restaurant for lunch service and events</li>
+                            <li>Ensured guest satisfaction in all F&B operations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Skills Section -->
+        <section class="section" id="skills">
+            <h2 class="section-title">Skills & Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h3 style="color: #d4af37; margin-bottom: 15px;">👥 Leadership</h3>
+                    <p>Team coordination, management, and motivation</p>
+                </div>
+                <div class="skill-item">
+                    <h3 style="color: #d4af37; margin-bottom: 15px;">💬 Communication</h3>
+                    <p>Excellent verbal and written communication skills</p>
+                </div>
+                <div class="skill-item">
+                    <h3 style="color: #d4af37; margin-bottom: 15px;">🤝 Guest Handling</h3>
+                    <p>Customer service and relationship management</p>
+                </div>
+                <div class="skill-item">
+                    <h3 style="color: #d4af37; margin-bottom: 15px;">⏰ Time Management</h3>
+                    <p>Efficient task prioritization and execution</p>
+                </div>
+                <div class="skill-item">
+                    <h3 style="color: #d4af37; margin-bottom: 15px;">💻 MS Office</h3>
+                    <p>Word and PowerPoint proficiency</p>
+                </div>
+                <div class="skill-item">
+                    <h3 style="color: #d4af37; margin-bottom: 15px;">🌐 Languages</h3>
+                    <p>English, Hindi & Bhojpuri (Read/Speak/Write)</p>
+                </div>
+            </div>
+        </section>
+        <!-- Campus Involvement -->
+        <section class="section">
+            <h2 class="section-title">Campus Involvement & Leadership</h2>
+            <div class="clubs">
+                <div class="club-badge">⚖️ Discipline Committee Member (2024)</div>
+                <div class="club-badge">🍰 Bakery Club Member (2023)</div>
+                <div class="club-badge">👨‍🍳 Kitchen Club Member (Present)</div>
+                <div class="club-badge">🎉 Event Management Club (2023-2024)</div>
+                <div class="club-badge">🌏 YUVA Tourism Club (Present)</div>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <h2 class="section-title">Get In Touch</h2>
+            <p style="text-align: center; font-size: 1.2em; color: #f4e4c1; margin-bottom: 20px;">
+                I'm always open to discussing new opportunities, collaborations, or answering any questions you may have.
+            </p>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <p><a href="mailto:aayushgupta2706@gmail.com">aayushgupta2706@gmail.com</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📱</div>
+                    <h3>Phone</h3>
+                    <p><a href="tel:+917091528781">+91 7091528781</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">🔗</div>
+                    <h3>LinkedIn</h3>
+                    <p><a href="https://www.linkedin.com/in/ayush-gupta-6840a1243" target="_blank">Connect with me</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Location</h3>
+                    <p>Ranchi, Jharkhand, India</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Ayush</h3>
+                <p>Passionate hospitality professional dedicated to delivering exceptional guest experiences and pursuing excellence in hotel management.</p>
+                <div class="social-links">
+                    <a href="mailto:aayushgupta2706@gmail.com" class="social-icon">📧</a>
+                    <a href="tel:+917091528781" class="social-icon">📱</a>
+                    <a href="https://www.linkedin.com/in/ayush-gupta-6840a1243" target="_blank" class="social-icon">🔗</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Education</h3>
+                <p>Institute of Hotel Management</p>
+                <p>Gwalior, Madhya Pradesh</p>
+                <p>B.Sc. in Hospitality & Hotel Administration</p>
+                <p>2023 - 2026</p>
+            </div>
+            <div class="footer-section">
+                <h3>Experience</h3>
+                <p>Taj Hari Mahal, Jodhpur</p>
+                <p>Industrial Training</p>
+                <p>July 2024 - October 2024</p>
+                <p>All Core Departments</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p style="color: #d4af37; font-size: 1.2em; margin-bottom: 15px; font-weight: bold;">
+                Ready to bring excellence to your hospitality team
+            </p>
+            <p style="margin-top: 10px;">© 2024 Ayush Gupta | All Rights Reserved</p>
+            <p style="margin-top: 10px; font-size: 0.9em; color: #999;">
+                Designed with passion for hospitality excellence
+            </p>
+        </div>
+    </footer>
+    <div class="floating-icon" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        ↑
+    </div>
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        const sections = document.querySelectorAll('.section');
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 1s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        const cards = document.querySelectorAll('.card, .dept-card, .skill-item');
+        cards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+        });
+        function openModal(element) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const img = element.querySelector('img');
+            
+            modal.style.display = 'block';
+            modalImg.src = img.src;
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.style.color = '#f4e4c1';
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.style.color = '#d4af37';
+                }
+            });
+        });
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        mobileMenu.addEventListener('click', function() {
+        if (navLinks.style.display === 'flex') {
+        navLinks.style.display = 'none';
+        } else {
+        navLinks.style.display = 'flex';
+    }
+});
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', function() {
+        if (window.innerWidth <= 768) {
+            navLinks.style.display = 'none';
+        }
+    });
+});
+    </script>
+</body>
+</html>
